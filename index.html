@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d5fe7" />
+    <title>Atmos — Weather, made clear</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Atmos home"><span class="brand-mark">☼</span>atmos</a>
+        <form class="search" id="search-form">
+          <label class="sr-only" for="city-input">Search for a city</label>
+          <span aria-hidden="true">⌕</span>
+          <input id="city-input" type="search" placeholder="Search city" autocomplete="off" />
+          <button type="submit">Search</button>
+        </form>
+        <button class="location-btn" id="location-btn" type="button" aria-label="Use my location">◎ <span>My location</span></button>
+      </header>
+
+      <section class="hero" aria-labelledby="place-name">
+        <div class="hero-copy">
+          <p class="eyebrow" id="date-label">Loading date…</p>
+          <h1 id="place-name">New Delhi, India</h1>
+          <p class="condition" id="condition-label">Mostly sunny</p>
+          <div class="temperature"><span id="temperature">--</span><sup>°</sup><button id="unit-toggle" type="button" aria-label="Switch temperature unit">C</button></div>
+          <p class="feels" id="feels-like">Feels like --°</p>
+        </div>
+        <div class="weather-art" id="weather-art" aria-hidden="true">
+          <div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+        </div>
+        <div class="hero-stats" aria-label="Current conditions">
+          <div><span>Wind</span><strong id="wind">-- km/h</strong></div>
+          <div><span>Humidity</span><strong id="humidity">--%</strong></div>
+          <div><span>Visibility</span><strong id="visibility">-- km</strong></div>
+        </div>
+      </section>
+
+      <section class="forecast-section" aria-labelledby="forecast-title">
+        <div class="section-heading"><div><p class="eyebrow">Plan ahead</p><h2 id="forecast-title">5-day forecast</h2></div><p class="updated" id="updated">Updated now</p></div>
+        <div class="forecast-grid" id="forecast-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="details" aria-labelledby="details-title">
+        <div class="section-heading"><div><p class="eyebrow">Right now</p><h2 id="details-title">Weather details</h2></div></div>
+        <div class="detail-grid">
+          <article><span class="detail-icon">◒</span><p>Sunrise</p><strong id="sunrise">--:--</strong></article>
+          <article><span class="detail-icon">◐</span><p>Sunset</p><strong id="sunset">--:--</strong></article>
+          <article><span class="detail-icon">◌</span><p>UV index</p><strong id="uv">--</strong><small id="uv-caption">—</small></article>
+          <article><span class="detail-icon">☂</span><p>Precipitation</p><strong id="precipitation">--%</strong><small>Chance of rain</small></article>
+        </div>
+      </section>
+    </main>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
